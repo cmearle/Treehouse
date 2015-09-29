@@ -22,6 +22,25 @@ class Monster:
     def battlecry(self):
         return self.sound.upper()
 
+class Goblin(Monster):
+    max_hit_points = 3
+    max_experience = 2
+    sound = 'squeak'
+    
+class Troll(Monster):
+    min_hit_points = 3
+    max_hit_points = 5
+    min_experience = 2
+    max_experience = 6
+    sound = 'growl'
+
+class Dragon(Monster):
+    min_hit_points = 5
+    max_hit_points = 10
+    min_experience = 6
+    max_experience = 10
+    sound = 'raaaaaawwwr'
+
 jubjub = Monster()
 print(jubjub.hit_points)
 print(jubjub.color)
@@ -30,3 +49,16 @@ jabberwock = Monster(color='blue', sound='whiffling', hit_points=500, adjective=
 print(jabberwock.hit_points)
 print(jabberwock.battlecry())
 print(jabberwock.adjective)
+
+azog = Goblin()
+print(azog.hit_points)
+print(azog.sound)
+
+snaga = Troll()
+print(snaga.hit_points)
+print(snaga.sound)
+
+
+pete = Dragon()
+print(pete.hit_points)
+print(pete.sound)
