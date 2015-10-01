@@ -1,6 +1,18 @@
-class Character:
+import random
+from combat import Combat
+
+class Character(Combat):
+    attack_limit = 10
     experience = 0
     hit_points = 10
+
+    def attack(self):
+        roll = random.randint(1, self.attack_limit)
+        if self.weapon == 'sword':
+            roll += 1
+        elif self.weapon == 'ax':
+            roll += 2
+        return roll > 4
 
     def get_weapon(self):
         weapon_choice = input("Weapon ([S]word, [A]xe, [B]ow): ").lower()
@@ -24,3 +36,4 @@ class Character:
 
 Chris = Character()
 print(Chris.weapon)
+print(Chris.attack())
