@@ -1,9 +1,10 @@
+from combat import Combat
 import random
 
 COLORS = ['yellow', 'red', 'blue', 'green']
 
 
-class Monster:
+class Monster(Combat):
     min_hit_points = 1
     max_hit_points = 1
     min_experience = 1
@@ -18,6 +19,12 @@ class Monster:
 
         for key, value in kwargs.items():
             setattr(self, key, value)
+
+    def __str__(self):
+        return '{} {}, HP: {}, XP: {}'.format(self.color.title(),
+                                              self.__class__.__name__,
+                                              self.hit_points,
+                                              self.experience)
 
     def battlecry(self):
         return self.sound.upper()
@@ -62,3 +69,10 @@ print(snaga.sound)
 pete = Dragon()
 print(pete.hit_points)
 print(pete.sound)
+
+draco = Dragon()
+print(draco)
+
+hoggle = Goblin()
+print(hoggle.attack())
+print(hoggle.dodge())
