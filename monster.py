@@ -47,32 +47,3 @@ class Dragon(Monster):
     min_experience = 6
     max_experience = 10
     sound = 'raaaaaawwwr'
-
-jubjub = Monster()
-print(jubjub.hit_points)
-print(jubjub.color)
-
-jabberwock = Monster(color='blue', sound='whiffling', hit_points=500, adjective='manxsome')
-print(jabberwock.hit_points)
-print(jabberwock.battlecry())
-print(jabberwock.adjective)
-
-azog = Goblin()
-print(azog.hit_points)
-print(azog.sound)
-
-snaga = Troll()
-print(snaga.hit_points)
-print(snaga.sound)
-
-
-pete = Dragon()
-print(pete.hit_points)
-print(pete.sound)
-
-draco = Dragon()
-print(draco)
-
-hoggle = Goblin()
-print(hoggle.attack())
-print(hoggle.dodge())
